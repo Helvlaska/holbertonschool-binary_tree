@@ -21,15 +21,13 @@ size_t binary_tree_nodes(const binary_tree_t *tree)
 	/*verifie si le noeud est une feuille*/
 	if (tree->left == NULL && tree->right == NULL)
 		return (0); /*il est à l'étage 0 on retourne 0*/
-	else
-	{
-		/*cherche la hauteur a gauche*/
-		total_left = binary_tree_nodes(tree->left);
-		/*cherche la hauteur a droite*/
-		total_right = binary_tree_nodes(tree->right);
-		/*on additionne la gauche et la droite*/
-		total_nodes = total_left + total_right;
-	}
+
+	/*cherche la hauteur a gauche*/
+	total_left = binary_tree_nodes(tree->left);
+	/*cherche la hauteur a droite*/
+	total_right = binary_tree_nodes(tree->right);
+	/*on additionne la gauche et la droite*/
+	total_nodes = total_left + total_right;
 
 	return (total_nodes + 1); /*on renvoie la somme + le current*/
 }
