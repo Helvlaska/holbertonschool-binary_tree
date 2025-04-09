@@ -19,8 +19,10 @@ size_t binary_tree_depth(const binary_tree_t *tree)
 	/*si le noeud est la racine (root)*/
 	if (tree->parent == NULL)
 		return (0);
-	else /*on remonte dans l'arbre par le parent & on incrémente le compteur*/
-		parent_depth = binary_tree_depth(tree->parent);
+
+	/*on remonte dans l'arbre par le parent & on incrémente le compteur*/
+	parent_depth = binary_tree_depth(tree->parent);
+
 	/*on retourne le compteur de profondeur + le noeud courant*/
 	return (parent_depth + 1);
 }
